@@ -1,0 +1,362 @@
+---
+// Los trabajos para clientes se muestran cuando hay sitios aprobados para publicar.
+const clientSites: { name: string; description: string; url: string }[] = [];
+const pageTitle = 'Desarrollo web en Paysandú | Jhon Guimaraens';
+const pageDescription = 'Soy Jhon Guimaraens, desarrollador web en Paysandú. Creo landing pages, sitios institucionales y tiendas online para negocios de todo Uruguay.';
+const publicUrl = Astro.site?.href;
+const socialImage = publicUrl && new URL('/social-preview.png', publicUrl).href;
+---
+<!doctype html>
+<html lang="es-UY">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#121413">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="description" content={pageDescription}>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_UY">
+    <meta property="og:title" content={pageTitle}>
+    <meta property="og:description" content={pageDescription}>
+    <meta property="og:site_name" content="Jhon Guimaraens">
+    {publicUrl && socialImage && <>
+      <link rel="canonical" href={publicUrl}>
+      <meta property="og:url" content={publicUrl}>
+      <meta property="og:image" content={socialImage}>
+      <meta property="og:image:type" content="image/png">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta property="og:image:alt" content="Jhon Guimaraens, desarrollo web en Paysandú para negocios de Uruguay">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content={socialImage}>
+    </>}
+    <title>{pageTitle}</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#inicio" aria-label="Jhon Guimaraens, ir al inicio">
+          <span class="brand-mark" aria-hidden="true">JG<span>.</span></span>
+          <span>Jhon Guimaraens</span>
+        </a>
+        <nav aria-label="Navegación principal">
+          <a href="#servicios">Servicios</a>
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#proyectos">Proyectos</a>
+        </nav>
+        <a class="header-contact" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section class="hero shell" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Desarrollo web en Paysandú</p>
+          <h1 id="hero-title">Una web que<br><em>explique bien</em><br>lo que hacés<span class="blink-dot">.</span></h1>
+          <p class="hero-intro">Soy Jhon, desarrollador web en Paysandú. Creo landing pages y sitios para negocios de todo Uruguay, claros y cómodos de usar en cualquier pantalla.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://wa.me/59892756977">Contame tu idea <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#proyectos">Ver proyectos <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="hero-graphic" aria-hidden="true">
+          <div class="graphic-top"><span>JHON / WEB</span><span>UY · 01</span></div>
+          <div class="graphic-word">hacer<br><i>visible<span class="blink-dot">.</span></i></div>
+          <div class="graphic-bottom"><span>Diseño + desarrollo</span><span class="graphic-arrow">↗</span></div>
+        </div>
+      </section>
+
+      <section class="services section" id="servicios" aria-labelledby="services-title">
+        <div class="shell services-layout">
+          <div class="section-heading">
+            <p class="eyebrow">Servicios web</p>
+            <h2 id="services-title">Tu negocio,<br><em>bien presentado<span class="blink-dot">.</span></em></h2>
+          </div>
+          <div class="service-list">
+            <article class="service-item">
+              <span class="service-number">01</span>
+              <div>
+                <h3>Landing pages</h3>
+                <p>Una página enfocada en presentar tu negocio, explicar lo que ofrecés y facilitar el contacto.</p>
+              </div>
+            </article>
+            <article class="service-item">
+              <span class="service-number">02</span>
+              <div>
+                <h3>Sitios institucionales</h3>
+                <p>Presentá tu negocio, servicios y equipo en una web de una o varias páginas. Puede incluir catálogo o galería.</p>
+              </div>
+            </article>
+            <article class="service-item">
+              <span class="service-number">03</span>
+              <div>
+                <h3>Tiendas online</h3>
+                <p>Un espacio de venta adaptado a tus productos, tu marca y la forma en que gestionás los pedidos.</p>
+              </div>
+            </article>
+            <article class="service-item">
+              <span class="service-number">04</span>
+              <div>
+                <h3>Auditoría y rediseño</h3>
+                <p>Analizo interfaz, velocidad y SEO. Entrego un prototipo visual y un documento con cambios propuestos y sus motivos. La implementación se cotiza aparte.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section" id="sobre-mi" aria-labelledby="about-title">
+        <div class="shell about-layout">
+          <p class="eyebrow">Un poco sobre mí</p>
+          <div>
+            <h2 id="about-title">Hola, soy <em>Jhon<span class="blink-dot">.</span></em></h2>
+            <p>Soy tecnólogo en informática y docente de informática. Hoy trabajo de forma independiente creando sitios web para negocios, y mi experiencia en proyectos de software me ayuda a abordar necesidades más amplias cuando aparecen.</p>
+            <a class="about-link" href="https://github.com/Jhonch1s" target="_blank" rel="noopener noreferrer">Conocé mi GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects shell" id="proyectos" aria-labelledby="projects-title">
+        <div class="project-feature">
+        <div class="projects-heading">
+          <div>
+            <p class="eyebrow">Trabajo seleccionado</p>
+            <h2 id="projects-title">Proyectos que<br><em>cuentan más<span class="blink-dot">.</span></em></h2>
+          </div>
+          <p>Una web real para un negocio de Paysandú, seguida de aplicaciones y un videojuego. Cada proyecto muestra una forma distinta de resolver problemas.</p>
+        </div>
+
+          <article class="project project-jair">
+            <div class="project-art jair-art">
+              <div class="jair-art-nav" aria-hidden="true"><img src="/assets/jair-logo.webp" width="960" height="192" alt=""><span>Servicios&nbsp;&nbsp; Equipamiento&nbsp;&nbsp; Contacto</span></div>
+              <div class="jair-art-hero" aria-hidden="true">
+                <div class="jair-art-photo"><img src="/assets/jair-portrait.webp" width="783" height="1185" alt="" loading="lazy"></div>
+                <div class="jair-art-message"><span>PAYSANDÚ Y LITORAL</span><strong>Aire acondicionado automotriz en Paysandú.</strong><i>Consultar</i></div>
+              </div>
+              <button class="jair-frost" type="button" aria-label="Quitar la escarcha de la vista previa de Jair Toscanini">
+                <span class="jair-frost-piece jair-frost-a" aria-hidden="true"></span>
+                <span class="jair-frost-piece jair-frost-b" aria-hidden="true"></span>
+                <span class="jair-frost-piece jair-frost-c" aria-hidden="true"></span>
+                <span class="jair-frost-piece jair-frost-d" aria-hidden="true"></span>
+                <span class="jair-frost-label">Tocá para quitar<br>la escarcha</span>
+              </button>
+            </div>
+            <div class="project-copy">
+              <div class="project-topline">
+                <p class="project-kind">Sitio para cliente · Publicado</p>
+                <button class="project-toggle" type="button" aria-label="Ver decisiones del sitio de Jair Toscanini" data-expand-label="Ver decisiones del sitio de Jair Toscanini" aria-expanded="false" aria-controls="jair-detail"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></button>
+              </div>
+              <div class="project-stage">
+                <div class="project-panel">
+                  <h3>Jair Toscanini</h3>
+                  <p>Una landing para un taller de climatización automotriz en Paysandú. Presenta los servicios, el equipamiento y trabajos reales, con una ruta clara hacia la consulta por WhatsApp.</p>
+                  <p class="project-tech">HTML · CSS · JavaScript</p>
+                </div>
+                <div class="project-panel project-detail" id="jair-detail" aria-hidden="true" inert>
+                  <p class="project-detail-label">Objetivo y decisiones</p>
+                  <h3>Del servicio a la consulta.</h3>
+                  <p>La página ordena la información para que se entienda qué vehículos y maquinaria atiende Jair. Usa su identidad, fotografías reales y contenido local de Paysandú.</p>
+                  <p class="project-detail-note">El sitio está publicado y se puede recorrer completo.</p>
+                </div>
+              </div>
+              <div class="project-links"><a class="project-live-link" href="https://jairtoscanini.com/" target="_blank" rel="noopener noreferrer">Visitar sitio <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="project-list">
+          <article class="project project-forest">
+            <div class="project-art" aria-hidden="true"><span class="art-small">GESTIÓN FORESTAL</span><img src="/assets/forest-access-logo.png" width="938" height="934" loading="lazy" alt=""><span class="art-rule"></span></div>
+            <div class="project-copy">
+              <div class="project-topline">
+                <p class="project-kind">Aplicación web · Proyecto académico en equipo</p>
+                <button class="project-toggle" type="button" aria-label="Ver mi aporte en ForestAccess" aria-expanded="false" aria-controls="forest-detail"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></button>
+              </div>
+              <div class="project-stage">
+                <div class="project-panel">
+                  <h3>ForestAccess</h3>
+                  <p>Una aplicación para organizar operaciones forestales: campos, rodales, parcelas, actividades y tratamientos. La demo muestra sus principales funciones con datos ficticios.</p>
+                  <p class="project-tech">React · TypeScript · Spring Boot · PostgreSQL</p>
+                </div>
+                <div class="project-panel project-detail" id="forest-detail" aria-hidden="true" inert>
+                  <p class="project-detail-label">Mi aporte</p>
+                  <h3>Del campo al registro diario.</h3>
+                  <p>Desarrollé gran parte de la gestión de campos, rodales, parcelas, tratamientos y empleados, además del registro de actividades en tiempo real y los resúmenes diarios.</p>
+                  <p class="project-detail-note">La gestión de cuadrillas fue desarrollada por otro integrante del equipo.</p>
+                </div>
+              </div>
+              <div class="project-links">
+                <a class="project-demo-link" href="/demos/forest-access/">Probar demo <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/Jhonch1s/forest_access_front" target="_blank" rel="noopener noreferrer">Frontend <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/Jhonch1s/forest_access" target="_blank" rel="noopener noreferrer">Backend <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project project-thread">
+            <div class="project-art" aria-hidden="true"><span class="art-small">COMUNICACIÓN CENTRALIZADA</span><span class="thread-logo"></span><span class="art-rule"></span></div>
+            <div class="project-copy">
+              <div class="project-topline">
+                <p class="project-kind">Aplicación web · Proyecto académico en equipo</p>
+                <button class="project-toggle" type="button" aria-label="Ver mi aporte en One Thread" aria-expanded="false" aria-controls="thread-detail"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></button>
+              </div>
+              <div class="project-stage">
+                <div class="project-panel">
+                  <h3>One Thread</h3>
+                  <p>Una plataforma que reúne mensajes de distintos canales y los clasifica con ayuda de IA. La demo permite recorrer la interfaz con datos ficticios.</p>
+                  <p class="project-tech">Laravel · React · Inertia · n8n</p>
+                </div>
+                <div class="project-panel project-detail" id="thread-detail" aria-hidden="true" inert>
+                  <p class="project-detail-label">Mi aporte</p>
+                  <h3>Mensajes en un solo lugar.</h3>
+                  <p>Trabajé principalmente en el frontend y el backend de la aplicación. El proyecto también integra n8n para automatizar flujos y servicios de IA para clasificar mensajes; mi participación en esa integración fue menor.</p>
+                  <p class="project-detail-note">La demo es estática y no se conecta con esos servicios.</p>
+                </div>
+              </div>
+              <div class="project-links">
+                <a class="project-demo-link" href="/demos/one-thread/">Probar demo <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/MatiasParente/one-thread" target="_blank" rel="noopener noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project project-exhume">
+            <div class="project-art" aria-hidden="true"><span class="art-small">VIDEOJUEGO EN DESARROLLO</span><strong>EX</strong><span class="art-rule"></span></div>
+            <div class="project-copy">
+              <div class="project-topline">
+                <p class="project-kind">Videojuego · Proyecto en equipo</p>
+                <button class="project-toggle" type="button" aria-label="Ver mi aporte en Exhume" aria-expanded="false" aria-controls="exhume-detail"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></button>
+              </div>
+              <div class="project-stage">
+                <div class="project-panel">
+                  <h3>Exhume</h3>
+                  <p>Un RPG en desarrollo con gráficos pixel art en sus interfaces y escenarios. Es un proyecto en equipo en el que he desarrollado la mayor parte del código hasta ahora.</p>
+                  <p class="project-tech">Godot · GDScript</p>
+                </div>
+                <div class="project-panel project-detail" id="exhume-detail" aria-hidden="true" inert>
+                  <p class="project-detail-label">Sistema de juego</p>
+                  <h3>Interacciones con lógica de mesa.</h3>
+                  <p>El complejo sistema de interacciones aspira a trasladar al videojuego reglas de Dungeons &amp; Dragons. El proyecto combina esa lógica RPG con una estética pixel art en interfaces y escenarios.</p>
+                  <p class="project-detail-note">El juego sigue en desarrollo.</p>
+                </div>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Jhonch1s/Exhume.edu" target="_blank" rel="noopener noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {clientSites.length > 0 && (
+        <section class="client-sites section shell" id="clientes" aria-labelledby="clients-title">
+          <p class="eyebrow">Sitios para clientes</p>
+          <h2 id="clients-title">Negocios que confiaron <em>en mi trabajo<span class="blink-dot">.</span></em></h2>
+          <div class="client-list">
+            {clientSites.map((site) => (
+              <article class="client-site">
+                <h3>{site.name}</h3>
+                <p>{site.description}</p>
+                <a href={site.url} target="_blank" rel="noopener noreferrer">Visitar sitio <span aria-hidden="true">↗</span></a>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <div class="closing-panel">
+        <section class="contact section shell" id="contacto" aria-labelledby="contact-title">
+          <p class="eyebrow">Empecemos por conversar</p>
+          <h2 id="contact-title">¿Tu negocio necesita<br><em>su lugar en la web?</em></h2>
+          <p>Contame qué hacés y qué necesitás mostrar. Podemos hablar por WhatsApp o por correo.</p>
+          <div class="contact-actions">
+            <a class="button button-primary" href="https://wa.me/59892756977">Escribime por WhatsApp <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="mailto:jhoncforever@gmail.com">Enviar un correo <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          <div class="shell footer-inner">
+            <span>© 2026 Jhon Guimaraens</span>
+            <span>Desde Paysandú para todo Uruguay</span>
+            <a href="#inicio">Volver arriba ↑</a>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <div class="demo-preview" id="demo-preview" aria-hidden="true">
+      <div class="demo-preview-window">
+        <div class="demo-preview-bar"><span class="demo-preview-title"></span><span>Clic para abrir la demo ↗</span></div>
+        <iframe title="Vista previa de la demo" tabindex="-1"></iframe>
+      </div>
+    </div>
+
+    <script is:inline>
+      document.documentElement.classList.add('has-js');
+      const favicon = document.querySelector('link[rel="icon"]');
+      const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+      let faviconInterval;
+      const updateFaviconMotion = () => {
+        clearInterval(faviconInterval);
+        favicon.href = '/favicon.svg';
+        if (reducedMotion.matches) return;
+        let bright = true;
+        faviconInterval = setInterval(() => {
+          bright = !bright;
+          favicon.href = bright ? '/favicon.svg' : '/favicon-dim.svg';
+        }, 750);
+      };
+      reducedMotion.addEventListener('change', updateFaviconMotion);
+      updateFaviconMotion();
+      const preview = document.getElementById('demo-preview');
+      const frame = preview.querySelector('iframe');
+      const title = preview.querySelector('.demo-preview-title');
+      const wideScreen = matchMedia('(min-width: 900px)');
+      const hidePreview = () => { preview.classList.remove('is-visible'); };
+      wideScreen.addEventListener('change', hidePreview);
+
+      for (const link of document.querySelectorAll('.project-demo-link')) {
+        const showPreview = () => {
+          if (!wideScreen.matches) return;
+          title.textContent = link.closest('.project').querySelector('h3').textContent;
+          if (frame.src !== link.href) frame.src = link.href;
+          preview.classList.add('is-visible');
+        };
+
+        link.addEventListener('pointerenter', (event) => {
+          if (event.pointerType === 'mouse') showPreview();
+        });
+        link.addEventListener('pointerleave', hidePreview);
+        link.addEventListener('focus', showPreview);
+        link.addEventListener('blur', hidePreview);
+        link.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') hidePreview();
+        });
+      }
+
+      for (const button of document.querySelectorAll('.project-toggle')) {
+        button.addEventListener('click', () => {
+          const project = button.closest('.project');
+          const expanded = project.classList.toggle('is-detail');
+          button.setAttribute('aria-expanded', expanded);
+          button.setAttribute('aria-label', expanded ? `Volver al resumen de ${project.querySelector('h3').textContent}` : (button.dataset.expandLabel || `Ver mi aporte en ${project.querySelector('h3').textContent}`));
+          for (const [index, panel] of project.querySelectorAll('.project-panel').entries()) {
+            const hidden = expanded ? index === 0 : index === 1;
+            panel.inert = hidden;
+            panel.setAttribute('aria-hidden', hidden);
+          }
+        });
+      }
+
+      const frost = document.querySelector('.jair-frost');
+      frost.addEventListener('click', () => {
+        frost.classList.add('is-clearing');
+        frost.disabled = true;
+      });
+    </script>
+  </body>
+</html>

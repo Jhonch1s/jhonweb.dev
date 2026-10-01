@@ -1,0 +1,13 @@
+{
+  "name": "jhon-guimaraens-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && pnpm --dir demos/one-thread build && pnpm --dir demos/forest-access build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^7.3.5"
+  }
+}
