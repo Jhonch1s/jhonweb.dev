@@ -3,7 +3,7 @@
 ## Estado
 
 - Fecha: 2026-09-28.
-- Etapa: portfolio publicado en `https://jhonweb.dev/` el 2026-10-01 mediante Cloudflare Pages (proyecto `jhonweb`, Direct Upload).
+- Etapa: portfolio publicado en `https://jhonweb.dev/` el 2026-10-01 mediante Cloudflare Pages (proyecto `jhonweb-git`, conectado a `Jhonch1s/jhonweb.dev`).
 - Identidad elegida: Jhon Guimaraens como profesional independiente. «Jhon» puede usarse en el trato cercano.
 
 ## Perfil y oferta
@@ -71,7 +71,7 @@
 - El símbolo de One Thread usa el SVG como máscara con el color de acento y sin fondo; se muestra más grande que antes.
 - En escritorio, enfocar o pasar el cursor sobre «Probar demo» muestra una vista previa flotante de la demo; el clic abre la demo completa. En móvil, el enlace abre la demo directamente.
 - Navegación visual por módulos de altura de pantalla con CSS scroll snap. El hero debe leerse completo al entrar; en pantallas estrechas se omite su gráfico decorativo y en pantallas bajas el encaje del scroll es flexible para no cortar contenido.
-- Publicado en Cloudflare Pages: raíz `clientes/jhon-guimaraens`, comando `pnpm run build`, salida `dist`. El mismo build incorpora las demos de ForestAccess y One Thread. Para actualizar, subir una nueva compilación a Pages Direct Upload.
+- Publicado en Cloudflare Pages desde la raíz del repositorio `Jhonch1s/jhonweb.dev`: rama `main`, comando `pnpm run build`, salida `dist`. El mismo build incorpora las demos de ForestAccess y One Thread. Cada push a `main` inicia un nuevo despliegue.
 
 ## Pendiente para pasar a contenido y diseño
 

@@ -1,6 +1,6 @@
 # Checklist de publicación — Jhon Guimaraens
 
-Revisión del 2026-10-01. Publicado en `https://jhonweb.dev/` con Cloudflare Pages (proyecto `jhonweb`).
+Revisión del 2026-10-01. Publicado en `https://jhonweb.dev/` con Cloudflare Pages (proyecto `jhonweb-git`, conectado a GitHub).
 
 ## Contenido
 
@@ -30,9 +30,9 @@ Revisión del 2026-10-01. Publicado en `https://jhonweb.dev/` con Cloudflare Pag
 ## Dominio y entrega
 
 - [x] Jhon registró `jhonweb.dev` en su cuenta de Cloudflare; el dominio figura Active.
-- [x] DNS inspeccionado: CNAME proxied del dominio raíz y de `www` hacia `jhonweb.pages.dev`; no hay registros MX ni correo del dominio configurado.
+- [x] DNS inspeccionado: CNAME proxied del dominio raíz y de `www` hacia `jhonweb-git.pages.dev`; no hay registros MX ni correo del dominio configurado.
 - [x] Cloudflare Pages marca el dominio raíz Active con SSL enabled. `http://jhonweb.dev/` redirige a HTTPS y `www.jhonweb.dev` redirige con 301 a la raíz, conservando ruta y parámetros.
 - [x] Copia del código fuente y de `dist` guardada en `backups/` el 2026-10-01.
-- [x] Actualizaciones: compilar con `pnpm run build` en `clientes/jhon-guimaraens` y subir el contenido de `dist/` como nueva implementación Direct Upload del proyecto Pages `jhonweb`.
+- [x] Actualizaciones: hacer push a `main` en `Jhonch1s/jhonweb.dev`; Cloudflare instala dependencias, ejecuta `pnpm run build` y publica `dist/` automáticamente.
 - [x] Publicado el 2026-10-01: `https://jhonweb.dev/`; demos en `/demos/forest-access/` y `/demos/one-thread/`.
 
