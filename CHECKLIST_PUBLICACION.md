@@ -1,6 +1,6 @@
 # Checklist de publicación — Jhon Guimaraens
 
-Revisión del 2026-10-01. Publicado en `https://jhonweb.dev/` con Cloudflare Pages (proyecto `jhonweb-git`, conectado a GitHub).
+Revisión del 2026-10-01; actualización SEO del 2026-10-02. Publicado en `https://jhonweb.dev/` con Cloudflare Pages (proyecto `jhonweb-git`, conectado a GitHub).
 
 ## Contenido
 
@@ -24,7 +24,7 @@ Revisión del 2026-10-01. Publicado en `https://jhonweb.dev/` con Cloudflare Pag
 - [x] Canonical, favicon e imagen social absoluta configurados para `jhonweb.dev`.
 - [x] `robots.txt` y sitemap configurados para la portada; las demos llevan `noindex`.
 - [x] Imágenes dimensionadas, comprimidas y con `alt` según su función decorativa o informativa.
-- [x] No se usa schema por ahora; no hay datos adicionales confirmados que lo justifiquen.
+- [x] Datos estructurados `WebSite` y `Person` basados en el nombre, profesión y GitHub públicos; JSON-LD comprobado en la salida compilada.
 - [x] Revisión inicial de peso completada: portada estática y demos cargadas por separado. La demo más pesada es One Thread (JS de 622 KB antes de compresión, 184 KB con gzip).
 
 ## Dominio y entrega
@@ -34,5 +34,6 @@ Revisión del 2026-10-01. Publicado en `https://jhonweb.dev/` con Cloudflare Pag
 - [x] Cloudflare Pages marca el dominio raíz Active con SSL enabled. `http://jhonweb.dev/` redirige a HTTPS y `www.jhonweb.dev` redirige con 301 a la raíz, conservando ruta y parámetros.
 - [x] Copia del código fuente y de `dist` guardada en `backups/` el 2026-10-01.
 - [x] Actualizaciones: hacer push a `main` en `Jhonch1s/jhonweb.dev`; Cloudflare instala dependencias, ejecuta `pnpm run build` y publica `dist/` automáticamente.
+- [x] Jhon confirmó la verificación de `jhonweb.dev` en Google Search Console el 2026-10-02.
 - [x] Publicado el 2026-10-01: `https://jhonweb.dev/`; demos en `/demos/forest-access/` y `/demos/one-thread/`.
 

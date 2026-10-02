@@ -5,6 +5,19 @@ const pageTitle = 'Desarrollo web en Paysandú | Jhon Guimaraens';
 const pageDescription = 'Soy Jhon Guimaraens, desarrollador web en Paysandú. Creo landing pages, sitios institucionales y tiendas online para negocios de todo Uruguay.';
 const publicUrl = Astro.site?.href;
 const socialImage = publicUrl && new URL('/social-preview.png', publicUrl).href;
+const structuredData = publicUrl && {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', name: 'Jhon Guimaraens', url: publicUrl },
+    {
+      '@type': 'Person',
+      name: 'Jhon Guimaraens',
+      url: publicUrl,
+      jobTitle: 'Desarrollador web',
+      sameAs: 'https://github.com/Jhonch1s',
+    },
+  ],
+};
 ---
 <!doctype html>
 <html lang="es-UY">
@@ -31,6 +44,7 @@ const socialImage = publicUrl && new URL('/social-preview.png', publicUrl).href;
       <meta name="twitter:image" content={socialImage}>
     </>}
     <title>{pageTitle}</title>
+    {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
