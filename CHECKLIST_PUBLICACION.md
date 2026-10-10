@@ -37,3 +37,14 @@ Revisión del 2026-10-01; actualización SEO del 2026-10-02. Publicado en `https
 - [x] Jhon confirmó la verificación de `jhonweb.dev` en Google Search Console el 2026-10-02.
 - [x] Publicado el 2026-10-01: `https://jhonweb.dev/`; demos en `/demos/forest-access/` y `/demos/one-thread/`.
 
+## Ampliación a cinco páginas — revisión previa al push del 2026-10-10
+
+- [x] Publicación solicitada expresamente por Jhon en esta conversación. Nombre, oferta, zona y canales se cotejaron con `BRIEF.md`; no se publican precios ni horarios.
+- [x] Compilados Astro y ambas demos. El build generó portada, Servicios, Orientación, Proyectos y Contacto; cada página tiene título y descripción únicos, un H1 y canonical propio.
+- [x] El sitemap del build contiene esas cinco URL canónicas y `robots.txt` señala el sitemap. El sitemap público anterior aún contiene solo la portada hasta que se despliegue.
+- [x] Comprobadas 74 referencias internas del build, sin recursos ni anclas faltantes. Las imágenes HTML tienen dimensiones y atributo `alt`.
+- [x] Portada y Servicios revisados en escritorio y en móvil de 390 px, sin desbordamiento horizontal en la vista móvil. La guía de orientación tiene controles obligatorios y resultado en el navegador.
+- [x] La portada incluye JSON-LD `WebSite` y `Person` válido como JSON. HTTP redirige 301 a HTTPS y HTTPS responde 200 antes del despliegue. La versión anterior permanece en Git (`fcd8ef0`).
+- [ ] Pendiente de revisión posterior: navegación por teclado y consola en las cinco páginas, medición de contraste, Rich Results Test y Core Web Vitals de campo. La demo One Thread mantiene un bundle de 622 kB antes de compresión; el logo PNG de ForestAccess pesa 413 kB.
+- [ ] Comprobar el despliegue público y actualizar su fecha tras el push. No se modifican DNS, correo ni cuentas de Google.
+
