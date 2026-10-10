@@ -46,5 +46,5 @@ Revisión del 2026-10-01; actualización SEO del 2026-10-02. Publicado en `https
 - [x] Portada y Servicios revisados en escritorio y en móvil de 390 px, sin desbordamiento horizontal en la vista móvil. La guía de orientación tiene controles obligatorios y resultado en el navegador.
 - [x] La portada incluye JSON-LD `WebSite` y `Person` válido como JSON. HTTP redirige 301 a HTTPS y HTTPS responde 200 antes del despliegue. La versión anterior permanece en Git (`fcd8ef0`).
 - [ ] Pendiente de revisión posterior: navegación por teclado y consola en las cinco páginas, medición de contraste, Rich Results Test y Core Web Vitals de campo. La demo One Thread mantiene un bundle de 622 kB antes de compresión; el logo PNG de ForestAccess pesa 413 kB.
-- [ ] Comprobar el despliegue público y actualizar su fecha tras el push. No se modifican DNS, correo ni cuentas de Google.
+- [x] Despliegue público comprobado el 2026-10-10: el sitemap sirve las cinco URL y `/servicios/` muestra su nuevo título. No se modificaron DNS, correo ni cuentas de Google.
 
