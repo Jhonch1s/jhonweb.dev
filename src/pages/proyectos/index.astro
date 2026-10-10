@@ -1,0 +1,67 @@
+---
+import InteriorLayout from '../../layouts/InteriorLayout.astro';
+---
+<InteriorLayout
+  title="Proyectos de desarrollo web en Paysandú | Jhon Guimaraens"
+  description="Conocé la landing de Jair Toscanini en Paysandú y proyectos de software en equipo. Mirá el sitio publicado, las demos y mi aporte en cada trabajo."
+  current="proyectos"
+>
+  <section class="interior-block interior-intro shell" aria-labelledby="projects-page-title">
+    <div>
+      <p class="eyebrow">Trabajo seleccionado</p>
+      <h1 id="projects-page-title">Proyectos web con <em>distintos desafíos.</em></h1>
+      <p class="interior-lead">Un sitio para un cliente real y proyectos de software desarrollados en equipo. En cada uno te cuento qué hice y qué podés visitar.</p>
+      <a class="button button-primary" href="#jair-toscanini">Explorar proyectos <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="intro-aside" aria-hidden="true"><span>Trabajo real, demos y código. Cada enlace indica qué vas a encontrar.</span><strong>JG<span class="blink-dot">.</span></strong></div>
+  </section>
+
+  <section class="interior-block project-overview" id="jair-toscanini" aria-labelledby="jair-title">
+    <div class="shell portfolio-layout">
+      <div class="portfolio-image"><img src="/assets/jair-portrait.webp" width="783" height="1185" alt="Fotografía utilizada en la web de Jair Toscanini" loading="lazy"></div>
+      <div class="portfolio-copy">
+        <p class="project-kind">Sitio para cliente · Publicado</p>
+        <h2 id="jair-title">Jair <em>Toscanini.</em></h2>
+        <p>Desarrollé una landing para su taller de climatización automotriz en Paysandú. Usa su identidad y fotografías reales para reunir servicios, equipamiento y trabajos, con una ruta clara hacia la consulta.</p>
+        <div class="portfolio-actions">
+          <a class="button button-primary" href="https://jairtoscanini.com/" target="_blank" rel="noopener noreferrer">Visitar el sitio <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="interior-block portfolio-more" aria-labelledby="other-projects-title">
+    <div class="shell">
+      <h2 id="other-projects-title">También construyo <em>software.</em></h2>
+      <div class="portfolio-list">
+        <article id="forest-access">
+          <div class="portfolio-symbol"><img src="/assets/forest-access-logo.png" width="938" height="934" alt="" loading="lazy"></div>
+          <div>
+            <p class="project-kind">Aplicación web · Proyecto académico en equipo</p>
+            <h3>ForestAccess</h3>
+            <p>Gestión de operaciones forestales. Desarrollé gran parte de la gestión de campos, parcelas, tratamientos y empleados, además del registro de actividades y resúmenes diarios. La gestión de cuadrillas fue de otro integrante.</p>
+            <div class="portfolio-actions"><a href="/demos/forest-access/">Probar demo con datos ficticios ↗</a><a href="https://github.com/Jhonch1s/forest_access_front" target="_blank" rel="noopener noreferrer">Ver frontend ↗</a></div>
+          </div>
+        </article>
+        <article id="one-thread">
+          <div class="portfolio-symbol"><span class="thread-logo" aria-hidden="true"></span></div>
+          <div>
+            <p class="project-kind">Aplicación web · Proyecto académico en equipo</p>
+            <h3>One Thread</h3>
+            <p>Una plataforma para reunir mensajes de varios canales. Trabajé principalmente en frontend y backend; mi participación en la integración de automatizaciones fue menor. La demo es estática y usa datos ficticios.</p>
+            <div class="portfolio-actions"><a href="/demos/one-thread/">Probar demo estática ↗</a><a href="https://github.com/MatiasParente/one-thread" target="_blank" rel="noopener noreferrer">Ver repositorio ↗</a></div>
+          </div>
+        </article>
+        <article id="exhume">
+          <div class="portfolio-symbol portfolio-symbol-type" aria-hidden="true">EX</div>
+          <div>
+            <p class="project-kind">Videojuego · Proyecto en equipo</p>
+            <h3>Exhume</h3>
+            <p>Un RPG en desarrollo con interfaces y escenarios pixel art. He desarrollado la mayor parte del código hasta ahora, incluido un sistema de interacciones inspirado en juegos de mesa.</p>
+            <div class="portfolio-actions"><a href="https://github.com/Jhonch1s/Exhume.edu" target="_blank" rel="noopener noreferrer">Ver repositorio ↗</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</InteriorLayout>

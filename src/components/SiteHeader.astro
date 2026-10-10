@@ -1,0 +1,27 @@
+---
+interface Props {
+  current: 'inicio' | 'servicios' | 'orientacion' | 'proyectos' | 'contacto';
+}
+
+const { current } = Astro.props;
+const pages = [
+  { label: 'Inicio', href: '/', key: 'inicio' },
+  { label: 'Servicios', href: '/servicios/', key: 'servicios' },
+  { label: 'Orientación', href: '/que-web-necesito/', key: 'orientacion' },
+  { label: 'Proyectos', href: '/proyectos/', key: 'proyectos' },
+] as const;
+---
+<header class="site-header" transition:name="site-header" transition:animate="none">
+  <div class="shell header-inner">
+    <a class="brand" href="/" aria-label="Jhon Guimaraens, ir al inicio">
+      <span class="brand-mark" aria-hidden="true">JG<span>.</span></span>
+      <span>Jhon Guimaraens</span>
+    </a>
+    <nav class="site-nav" aria-label="Páginas principales">
+      {pages.map(({ label, href, key }) => (
+        <a href={href} aria-current={current === key ? 'page' : undefined}>{label}</a>
+      ))}
+    </nav>
+    <a class="header-contact" href="/contacto/" aria-current={current === 'contacto' ? 'page' : undefined}>Contacto <span aria-hidden="true">↗</span></a>
+  </div>
+</header>

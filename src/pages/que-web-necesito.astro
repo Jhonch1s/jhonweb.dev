@@ -1,0 +1,57 @@
+---
+import InteriorLayout from '../layouts/InteriorLayout.astro';
+---
+<InteriorLayout
+  title="¿Landing page, sitio web o tienda online? | Jhon Guimaraens"
+  description="Descubrí qué tipo de web podría servir a tu negocio: landing page, sitio institucional, catálogo o tienda online. Dos preguntas para empezar a decidir."
+  current="orientacion"
+>
+  <section class="interior-block guide-intro shell" aria-labelledby="guide-title">
+    <div>
+      <p class="eyebrow">Una orientación para empezar</p>
+      <h1 id="guide-title">¿Qué web <em>necesitás?</em></h1>
+      <p class="interior-lead">¿Necesitás una landing page, un sitio con varias páginas, un catálogo o una tienda online? Elegí lo que se parece más a tu idea y te voy a sugerir un punto de partida que podemos ajustar conversando.</p>
+      <a class="button button-primary" href="#preguntas">Empezar la guía <span aria-hidden="true">↓</span></a>
+    </div>
+    <p class="guide-aside">Dos preguntas. Una primera dirección. Sin presupuesto automático.</p>
+  </section>
+
+  <section class="interior-block guide-section" id="preguntas" aria-labelledby="questions-title">
+    <div class="shell guide-layout">
+      <div class="guide-heading">
+        <h2 id="questions-title">Contame qué <em>querés lograr.</em></h2>
+        <p>No hace falta conocer términos técnicos para responder.</p>
+      </div>
+      <div>
+        <form id="site-guide" action="/contacto/" method="get">
+          <fieldset>
+            <legend>¿Qué querés hacer con la web?</legend>
+            <label class="choice"><input type="radio" name="objetivo" value="presentar" required><span>Presentar mi negocio o mis servicios</span></label>
+            <label class="choice"><input type="radio" name="objetivo" value="mostrar"><span>Mostrar productos o trabajos para recibir consultas</span></label>
+            <label class="choice"><input type="radio" name="objetivo" value="vender"><span>Permitir que compren en línea</span></label>
+            <label class="choice"><input type="radio" name="objetivo" value="mejorar"><span>Mejorar una web que ya tengo</span></label>
+          </fieldset>
+          <fieldset>
+            <legend>¿Cuánto contenido necesitás explicar?</legend>
+            <label class="choice"><input type="radio" name="contenido" value="uno" required><span>Una propuesta principal</span></label>
+            <label class="choice"><input type="radio" name="contenido" value="varios"><span>Varias áreas, servicios o categorías</span></label>
+            <label class="choice"><input type="radio" name="contenido" value="duda"><span>Todavía no lo sé</span></label>
+          </fieldset>
+          <button class="button button-primary" type="submit">Ver orientación <span aria-hidden="true">↗</span></button>
+          <noscript><p>Para recibir una orientación en esta página necesitás activar JavaScript. También podés escribirme desde la sección de contacto.</p></noscript>
+        </form>
+        <section class="guide-result" id="guide-result" aria-labelledby="result-title" aria-live="polite" tabindex="-1" hidden>
+          <p class="result-label">Un punto de partida</p>
+          <h3 id="result-title"></h3>
+          <p id="result-reason"></p>
+          <p>Esto orienta la conversación; el alcance y el presupuesto se definen después de conocer tu proyecto.</p>
+          <div class="result-actions">
+            <a class="button button-primary" id="result-contact" href="https://wa.me/59892756977">Contame tu idea <span aria-hidden="true">↗</span></a>
+            <a id="result-service" href="/servicios/">Conocer esta opción <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+  <script src="../scripts/guide.js"></script>
+</InteriorLayout>

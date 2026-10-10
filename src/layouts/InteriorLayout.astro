@@ -1,0 +1,54 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import SiteHeader from '../components/SiteHeader.astro';
+import { pageSlide } from '../transitions/pageSlide';
+
+interface Props {
+  title: string;
+  description: string;
+  current: 'servicios' | 'orientacion' | 'proyectos' | 'contacto';
+}
+
+const { title, description, current } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const socialImage = new URL('/social-preview.png', Astro.site).href;
+---
+<!doctype html>
+<html lang="es-UY" class="interior-page" transition:name="root" transition:animate={pageSlide}>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#121413">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href={canonical}>
+    <meta name="description" content={description}>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_UY">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:site_name" content="Jhon Guimaraens">
+    <meta property="og:url" content={canonical}>
+    <meta property="og:image" content={socialImage}>
+    <meta property="og:image:alt" content="Jhon Guimaraens, desarrollo web en Paysandú para negocios de Uruguay">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content={socialImage}>
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles.css">
+    <ClientRouter />
+    <script src="../scripts/pageNavigation.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <SiteHeader current={current} />
+    <main id="contenido">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <span>© 2026 Jhon Guimaraens</span>
+        <span>Desde Paysandú para todo Uruguay</span>
+        <a href="/#inicio">Volver al inicio ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
