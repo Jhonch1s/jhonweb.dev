@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 const title = 'Jhon Guimaraens | Desarrollo web';
 const description = 'Diseño y desarrollo sitios web para negocios desde Paysandú. Conocé mis proyectos y guardá mis datos de contacto.';
 const canonical = new URL('/hola/', Astro.site).href;
@@ -21,7 +22,6 @@ const canonical = new URL('/hola/', Astro.site).href;
     <meta property="og:image" content={new URL('/social-preview.png', Astro.site).href}>
     <meta name="twitter:card" content="summary_large_image">
     <title>{title}</title>
-    <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="nfc-page">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>

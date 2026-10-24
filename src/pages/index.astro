@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import SiteHeader from '../components/SiteHeader.astro';
 import { pageSlide } from '../transitions/pageSlide';
@@ -48,7 +49,6 @@ const structuredData = publicUrl && {
     </>}
     <title>{pageTitle}</title>
     {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
-    <link rel="stylesheet" href="/styles.css">
     <ClientRouter />
     <script src="../scripts/pageNavigation.js"></script>
   </head>

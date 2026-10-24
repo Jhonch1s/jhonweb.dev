@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import SiteHeader from '../components/SiteHeader.astro';
 import { pageSlide } from '../transitions/pageSlide';
@@ -33,7 +34,6 @@ const socialImage = new URL('/social-preview.png', Astro.site).href;
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content={socialImage}>
     <title>{title}</title>
-    <link rel="stylesheet" href="/styles.css">
     <ClientRouter />
     <script src="../scripts/pageNavigation.js"></script>
   </head>
