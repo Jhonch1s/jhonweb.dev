@@ -292,9 +292,12 @@ html.interior-page { scroll-snap-type: y proximity; }
   .contact-intro { gap: 12px; }
   .contact-method { gap: 6px; padding: 12px 8px; }
   .contact-method strong { font-size: 1.5rem; }
-  .portfolio-list article { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto; row-gap: 14px; padding-block: 26px; }
-  .portfolio-entry-heading { display: grid; grid-template-columns: 80px minmax(0, 1fr); grid-column: 1; grid-row: 1; align-items: center; gap: 14px; }
-  .portfolio-symbol { grid-column: auto; grid-row: auto; width: 80px; height: 80px; }
+  .portfolio-more { min-height: 0; align-items: start; padding-block: 56px; }
+  .portfolio-more h2 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+  .portfolio-list { margin-top: 32px; }
+  .portfolio-list article { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto; row-gap: 14px; padding-block: 22px; }
+  .portfolio-entry-heading { display: grid; grid-template-columns: 64px minmax(0, 1fr); grid-column: 1; grid-row: 1; align-items: center; gap: 14px; }
+  .portfolio-symbol { grid-column: auto; grid-row: auto; width: 64px; height: 64px; }
   .portfolio-heading-copy { grid-column: auto; grid-row: auto; }
   .portfolio-heading-copy .project-kind { margin-bottom: 6px; }
   .portfolio-list h3 { font-size: clamp(1.55rem, 7vw, 2rem); }
@@ -330,6 +333,13 @@ html.interior-page { scroll-snap-type: y proximity; }
   .project-art { min-height: 260px; }
   .project-art strong { font-size: 8rem; }
   .jair-art-message strong { font-size: clamp(1.2rem, 3vw, 1.7rem); }
+}
+
+@media (max-width: 850px) {
+  html, html.interior-page { scroll-snap-type: none; }
+  .interior-block { min-height: 0; scroll-snap-align: none; }
+  .portfolio-more { align-items: start; }
+  .project, .project-feature { scroll-snap-stop: normal; }
 }
 
 @media (max-width: 899px) {
