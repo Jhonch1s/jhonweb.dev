@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Guimaraens;Jhon;;;
+FN:Jhon Guimaraens
+ORG:Jhon Guimaraens - Desarrollo web
+TITLE:Desarrollador web
+TEL;TYPE=CELL,VOICE:+59892756977
+EMAIL;TYPE=INTERNET:jhoncforever@gmail.com
+URL:https://jhonweb.dev/
+ADR;TYPE=WORK:;;Paysandu;;;Uruguay
+END:VCARD
