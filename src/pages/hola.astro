@@ -7,7 +7,7 @@ const canonical = new URL('/hola/', Astro.site).href;
 <html lang="es-UY">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#121413">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="canonical" href={canonical}>
@@ -24,6 +24,7 @@ const canonical = new URL('/hola/', Astro.site).href;
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="nfc-page">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <main class="nfc-shell" id="contenido">
       <header class="nfc-header">
         <a class="brand" href="/" aria-label="Jhon Guimaraens, ir al inicio">
@@ -54,34 +55,70 @@ const canonical = new URL('/hola/', Astro.site).href;
         <a href="/">jhonweb.dev <span aria-hidden="true">↗</span></a>
       </footer>
     </main>
+    <aside class="nfc-dock" aria-label="Contacto rápido">
+      <span>¿Hablamos de tu web?</span>
+      <a class="button button-primary" href="https://wa.me/59892756977">WhatsApp <span aria-hidden="true">↗</span></a>
+    </aside>
   </body>
 </html>
 
 <style>
-  .nfc-page { min-height: 100svh; }
-  .nfc-shell { width: min(100% - 40px, 680px); margin: 0 auto; }
-  .nfc-header { display: flex; min-height: 78px; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); }
-  .nfc-location { color: var(--muted); font-size: .76rem; }
-  .nfc-intro { padding-block: clamp(56px, 10vh, 104px) 52px; }
-  .nfc-intro .eyebrow { margin-bottom: 24px; color: var(--muted); }
-  .nfc-intro h1 { margin-bottom: 22px; font-size: clamp(3.2rem, 13vw, 5.4rem); }
-  .nfc-lead { max-width: 550px; margin-bottom: 30px; color: var(--muted); font-size: clamp(1.04rem, 3.5vw, 1.18rem); line-height: 1.65; }
-  .nfc-actions { display: grid; grid-template-columns: 1fr; gap: 12px; }
-  .nfc-actions .button { width: 100%; }
-  .nfc-links { border-top: 1px solid var(--line); }
-  .nfc-links a { display: flex; min-height: 84px; flex-direction: column; justify-content: center; gap: 7px; border-bottom: 1px solid var(--line); transition: color .2s ease; }
-  .nfc-links a:hover { color: var(--accent); }
-  .nfc-links a > span { color: var(--muted); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
-  .nfc-links strong { display: flex; align-items: center; justify-content: space-between; font-size: 1.08rem; }
-  .nfc-footer { display: flex; justify-content: space-between; gap: 16px; padding-block: 24px 30px; color: var(--muted); font-size: .75rem; }
+  .nfc-page {
+    min-height: 100svh;
+    padding: 0 0 env(safe-area-inset-bottom);
+    background: radial-gradient(ellipse at 50% 12%, rgb(217 240 103 / 7%), transparent 38%), var(--paper);
+  }
+  .nfc-shell { width: min(100% - 32px, 560px); min-height: 100svh; margin: 0 auto; padding-bottom: 24px; }
+  .nfc-header { display: flex; min-height: 74px; align-items: center; justify-content: space-between; gap: 14px; border-bottom: 1px solid var(--line); }
+  .nfc-header .brand { font-size: .84rem; }
+  .nfc-header .brand-mark { width: 36px; height: 36px; }
+  .nfc-location { color: var(--muted); font-size: .76rem; white-space: nowrap; }
+  .nfc-intro { margin-block: 22px 18px; padding: clamp(24px, 7vw, 38px) clamp(20px, 6vw, 34px); border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(145deg, rgb(255 255 255 / 3%), transparent 56%), var(--surface); box-shadow: 0 18px 60px rgb(0 0 0 / 18%); }
+  .nfc-intro .eyebrow { margin-bottom: 20px; color: var(--muted); font-size: .7rem; }
+  .nfc-intro h1 { margin-bottom: 18px; font-size: clamp(2.8rem, 12.5vw, 4rem); line-height: .98; }
+  .nfc-lead { max-width: 520px; margin-bottom: 24px; color: var(--muted); font-size: 1rem; line-height: 1.65; }
+  .nfc-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .nfc-actions .button { width: 100%; min-height: 56px; border-radius: 12px; }
+  .nfc-links { display: grid; gap: 10px; }
+  .nfc-links a { display: flex; min-height: 74px; flex-direction: column; justify-content: center; gap: 6px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 14px; background: rgb(255 255 255 / 2%); transition: border-color .2s ease, background .2s ease; }
+  .nfc-links a:hover { border-color: var(--accent); background: var(--surface); }
+  .nfc-links a > span { color: var(--muted); font-size: .72rem; letter-spacing: .07em; text-transform: uppercase; }
+  .nfc-links strong { display: flex; align-items: center; justify-content: space-between; font-size: 1rem; }
+  .nfc-footer { display: flex; justify-content: space-between; gap: 16px; padding: 22px 2px 8px; color: var(--muted); font-size: .73rem; }
   .nfc-footer a { color: var(--ink); }
   .nfc-footer a:hover { color: var(--accent); }
-  @media (min-width: 540px) {
-    .nfc-shell { width: min(100% - 64px, 680px); }
+  .nfc-dock { display: none; }
+  @media (min-width: 560px) {
+    .nfc-shell { width: min(100% - 48px, 560px); padding-bottom: 36px; }
+    .nfc-header { min-height: 82px; }
+    .nfc-intro { margin-block: 32px 20px; padding: 40px; }
+    .nfc-intro h1 { font-size: clamp(3.2rem, 8vw, 4.2rem); }
     .nfc-actions { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .nfc-shell { padding-bottom: calc(104px + env(safe-area-inset-bottom)); }
+    .nfc-dock { position: fixed; z-index: 10; right: 0; bottom: 0; left: 0; display: flex; min-height: 78px; align-items: center; justify-content: space-between; gap: 16px; padding: 10px max(16px, env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); border-top: 1px solid var(--line); background: rgb(18 20 19 / 94%); backdrop-filter: blur(16px); }
+    .nfc-dock > span { color: var(--muted); font-size: .78rem; }
+    .nfc-dock .button { min-height: 48px; padding: 12px 16px; border-radius: 12px; white-space: nowrap; }
+    .nfc-footer { padding-bottom: 6px; }
+  }
+  @media (max-width: 360px) {
+    .nfc-shell { width: min(100% - 24px, 560px); }
+    .nfc-header .brand { gap: 8px; font-size: .78rem; }
+    .nfc-location { font-size: .7rem; }
+    .nfc-intro { padding-inline: 16px; }
+    .nfc-intro h1 { font-size: clamp(2.45rem, 12vw, 2.8rem); }
+  }
+  @media (max-height: 640px) and (max-width: 560px) {
+    .nfc-intro { margin-top: 14px; padding-block: 22px; }
+    .nfc-intro .eyebrow { margin-bottom: 14px; }
+    .nfc-intro h1 { margin-bottom: 14px; }
+    .nfc-lead { margin-bottom: 18px; line-height: 1.5; }
   }
   @media (prefers-reduced-motion: reduce) {
     .nfc-page { scroll-behavior: auto; }
     .nfc-page .blink-dot { animation: none; }
+    .nfc-page a { transition: none; }
   }
 </style>
+
