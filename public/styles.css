@@ -242,15 +242,20 @@ html.interior-page { scroll-snap-type: y proximity; }
 .portfolio-copy h2 { margin-bottom: 28px; }
 .portfolio-copy > p:not(.project-kind), .portfolio-list article p:not(.project-kind), .contact-followup p { max-width: 60ch; color: var(--muted); line-height: 1.65; }
 .portfolio-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 26px; margin-top: 26px; }
-.portfolio-actions a:not(.button) { color: var(--accent); font-size: .88rem; font-weight: 700; text-decoration: underline; text-underline-offset: 5px; }
+.portfolio-actions a:not(.button) { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); font-size: .88rem; font-weight: 700; text-decoration: underline; text-underline-offset: 5px; }
 .portfolio-more h2 { max-width: 800px; }
 .portfolio-list { margin-top: 48px; border-top: 1px solid var(--line); }
-.portfolio-list article { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: clamp(28px, 5vw, 76px); align-items: center; padding-block: 40px; border-bottom: 1px solid var(--line); scroll-margin-top: 24px; }
-.portfolio-list h3 { font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: -.05em; }
-.portfolio-symbol { display: grid; place-items: center; width: 180px; height: 180px; background: var(--surface); }
-.portfolio-symbol img { max-width: 70%; max-height: 70%; object-fit: contain; }
+.portfolio-list article { display: grid; grid-template-columns: 180px minmax(0, 1fr); grid-template-rows: auto auto auto; column-gap: clamp(28px, 5vw, 76px); row-gap: 12px; align-items: center; padding-block: 32px; border-bottom: 1px solid var(--line); scroll-margin-top: 24px; }
+.portfolio-entry-heading { display: contents; }
+.portfolio-symbol { display: grid; grid-column: 1; grid-row: 1; place-items: center; width: 180px; height: 180px; background: var(--surface); }
+.portfolio-symbol img { display: block; width: 70%; height: 70%; object-fit: contain; }
 .portfolio-symbol .thread-logo { width: 70%; }
 .portfolio-symbol-type { color: var(--accent); font-size: 5rem; font-weight: 700; letter-spacing: -.12em; }
+.portfolio-heading-copy { grid-column: 2; grid-row: 1; min-width: 0; }
+.portfolio-heading-copy .project-kind { margin-bottom: 8px; }
+.portfolio-list h3 { margin-bottom: 0; font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: -.05em; }
+.portfolio-list article > p:not(.project-kind) { grid-column: 2; grid-row: 2; margin-bottom: 0; }
+.portfolio-list .portfolio-actions { grid-column: 2; grid-row: 3; align-self: start; margin-top: 0; }
 .contact-intro { grid-template-columns: minmax(0, 1fr) minmax(280px, .9fr); gap: clamp(40px, 8vw, 110px); min-height: calc(100dvh - 80px); scroll-snap-align: none; }
 .contact-intro h1 { font-size: clamp(3.1rem, 5.8vw, 5.8rem); }
 .contact-methods { border-top: 1px solid var(--line); }
@@ -287,9 +292,16 @@ html.interior-page { scroll-snap-type: y proximity; }
   .contact-intro { gap: 12px; }
   .contact-method { gap: 6px; padding: 12px 8px; }
   .contact-method strong { font-size: 1.5rem; }
-  .portfolio-list article { grid-template-columns: 1fr; gap: 22px; }
-  .portfolio-symbol { width: 120px; height: 120px; }
-  .portfolio-symbol-type { font-size: 3.5rem; }
+  .portfolio-list article { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto; row-gap: 14px; padding-block: 26px; }
+  .portfolio-entry-heading { display: grid; grid-template-columns: 80px minmax(0, 1fr); grid-column: 1; grid-row: 1; align-items: center; gap: 14px; }
+  .portfolio-symbol { grid-column: auto; grid-row: auto; width: 80px; height: 80px; }
+  .portfolio-heading-copy { grid-column: auto; grid-row: auto; }
+  .portfolio-heading-copy .project-kind { margin-bottom: 6px; }
+  .portfolio-list h3 { font-size: clamp(1.55rem, 7vw, 2rem); }
+  .portfolio-list article > p:not(.project-kind), .portfolio-list .portfolio-actions { grid-column: 1; }
+  .portfolio-list article > p:not(.project-kind) { grid-row: 2; }
+  .portfolio-list .portfolio-actions { grid-row: 3; gap: 6px 18px; }
+  .portfolio-symbol-type { font-size: 3rem; }
 }
 
 @media (min-width: 1100px) and (min-height: 701px) {
@@ -374,4 +386,7 @@ html.interior-page { scroll-snap-type: y proximity; }
   .jair-frost.is-clearing .jair-frost-piece, .jair-frost.is-clearing .jair-frost-label { transform: none; }
   .rail-mark, .rail-label, .contact-method { transition: none; }
 }
+
+
+
 
