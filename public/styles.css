@@ -267,7 +267,9 @@ html.interior-page { scroll-snap-type: y proximity; }
   .interior-intro, .guide-intro, .redesign-layout, .guide-layout, .portfolio-layout, .contact-intro, .contact-followup-layout { grid-template-columns: 1fr; }
   .interior-block { min-height: auto; padding-block: 88px; }
   .interior-intro, .guide-intro, .contact-intro { min-height: calc(100dvh - 97px); }
-  .intro-aside { min-height: 220px; }
+  .intro-aside { display: none; }
+  .portfolio-list article { grid-template-columns: 140px minmax(0, 1fr); gap: clamp(24px, 4vw, 36px); }
+  .portfolio-symbol { width: 140px; height: 140px; }
   .guide-aside { align-self: start; }
   .guide-heading { position: static; }
 }
@@ -372,3 +374,4 @@ html.interior-page { scroll-snap-type: y proximity; }
   .jair-frost.is-clearing .jair-frost-piece, .jair-frost.is-clearing .jair-frost-label { transform: none; }
   .rail-mark, .rail-label, .contact-method { transition: none; }
 }
+
