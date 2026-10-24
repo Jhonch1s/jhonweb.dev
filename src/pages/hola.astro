@@ -39,30 +39,32 @@ const canonical = new URL('/hola/', Astro.site).href;
         <h1 id="nfc-title">Una web que<br><em>explique bien</em><br>lo que hacés<span class="blink-dot">.</span></h1>
         <p class="nfc-lead">Soy Jhon. Diseño y desarrollo sitios web para negocios que quieren presentar mejor lo que hacen y facilitar el contacto con sus clientes.</p>
         <div class="nfc-actions">
-          <a class="button button-primary" href="https://wa.me/59892756977">Hablemos por WhatsApp <span aria-hidden="true">↗</span></a>
-          <a class="button button-outline" href="/jhon-guimaraens.vcf" download>Guardar mi contacto <span aria-hidden="true">↓</span></a>
+          <a class="button button-primary" href="https://wa.me/59892756977">Hablemos por WhatsApp <svg class="nfc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" /></svg></a>
+          <a class="button button-outline" href="/jhon-guimaraens.vcf" download>Guardar mi contacto <svg class="nfc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v15m-6-6 6 6 6-6" /></svg></a>
         </div>
       </section>
 
       <nav class="nfc-links" aria-label="Conocer mi trabajo">
-        <a href="/proyectos/"><span>01 / Trabajo seleccionado</span><strong>Ver proyectos <span aria-hidden="true">↗</span></strong></a>
-        <a href="/servicios/"><span>02 / Lo que puedo hacer</span><strong>Conocer mis servicios <span aria-hidden="true">↗</span></strong></a>
-        <a href="mailto:jhoncforever@gmail.com"><span>03 / Contacto por correo</span><strong>Enviar un email <span aria-hidden="true">↗</span></strong></a>
+        <a href="/proyectos/"><span>01 / Trabajo seleccionado</span><strong>Ver proyectos <svg class="nfc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" /></svg></strong></a>
+        <a href="/servicios/"><span>02 / Lo que puedo hacer</span><strong>Conocer mis servicios <svg class="nfc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" /></svg></strong></a>
+        <a href="mailto:jhoncforever@gmail.com"><span>03 / Contacto por correo</span><strong>Enviar un email <svg class="nfc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" /></svg></strong></a>
       </nav>
 
       <footer class="nfc-footer">
         <span>Diseño + desarrollo desde Paysandú</span>
-        <a href="/">jhonweb.dev <span aria-hidden="true">↗</span></a>
+        <a href="/">jhonweb.dev <svg class="nfc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" /></svg></a>
       </footer>
     </main>
     <aside class="nfc-dock" aria-label="Contacto rápido">
       <span>¿Hablamos de tu web?</span>
-      <a class="button button-primary" href="https://wa.me/59892756977">WhatsApp <span aria-hidden="true">↗</span></a>
+      <a class="button button-primary" href="https://wa.me/59892756977">WhatsApp <svg class="nfc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" /></svg></a>
     </aside>
   </body>
 </html>
 
 <style>
+  .nfc-icon { width: 16px; height: 16px; flex: none; }
+  .nfc-actions .nfc-icon { width: 18px; height: 18px; }
   .nfc-page {
     min-height: 100svh;
     padding: 0 0 env(safe-area-inset-bottom);
@@ -73,14 +75,14 @@ const canonical = new URL('/hola/', Astro.site).href;
   .nfc-header .brand { font-size: .84rem; }
   .nfc-header .brand-mark { width: 36px; height: 36px; }
   .nfc-location { color: var(--muted); font-size: .76rem; white-space: nowrap; }
-  .nfc-intro { margin-block: 22px 18px; padding: clamp(24px, 7vw, 38px) clamp(20px, 6vw, 34px); border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(145deg, rgb(255 255 255 / 3%), transparent 56%), var(--surface); box-shadow: 0 18px 60px rgb(0 0 0 / 18%); }
+  .nfc-intro { margin-block: 22px 18px; padding: clamp(24px, 7vw, 38px) clamp(20px, 6vw, 34px); border: 1px solid var(--line); border-radius: 0; background: linear-gradient(145deg, rgb(255 255 255 / 3%), transparent 56%), var(--surface); box-shadow: 0 18px 60px rgb(0 0 0 / 18%); }
   .nfc-intro .eyebrow { margin-bottom: 20px; color: var(--muted); font-size: .7rem; }
   .nfc-intro h1 { margin-bottom: 18px; font-size: clamp(2.8rem, 12.5vw, 4rem); line-height: .98; }
   .nfc-lead { max-width: 520px; margin-bottom: 24px; color: var(--muted); font-size: 1rem; line-height: 1.65; }
   .nfc-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
-  .nfc-actions .button { width: 100%; min-height: 56px; border-radius: 12px; }
+  .nfc-actions .button { width: 100%; min-height: 56px; border-radius: 0; }
   .nfc-links { display: grid; gap: 10px; }
-  .nfc-links a { display: flex; min-height: 74px; flex-direction: column; justify-content: center; gap: 6px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 14px; background: rgb(255 255 255 / 2%); transition: border-color .2s ease, background .2s ease; }
+  .nfc-links a { display: flex; min-height: 74px; flex-direction: column; justify-content: center; gap: 6px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 0; background: rgb(255 255 255 / 2%); transition: border-color .2s ease, background .2s ease; }
   .nfc-links a:hover { border-color: var(--accent); background: var(--surface); }
   .nfc-links a > span { color: var(--muted); font-size: .72rem; letter-spacing: .07em; text-transform: uppercase; }
   .nfc-links strong { display: flex; align-items: center; justify-content: space-between; font-size: 1rem; }
@@ -99,7 +101,7 @@ const canonical = new URL('/hola/', Astro.site).href;
     .nfc-shell { padding-bottom: calc(104px + env(safe-area-inset-bottom)); }
     .nfc-dock { position: fixed; z-index: 10; right: 0; bottom: 0; left: 0; display: flex; min-height: 78px; align-items: center; justify-content: space-between; gap: 16px; padding: 10px max(16px, env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); border-top: 1px solid var(--line); background: rgb(18 20 19 / 94%); backdrop-filter: blur(16px); }
     .nfc-dock > span { color: var(--muted); font-size: .78rem; }
-    .nfc-dock .button { min-height: 48px; padding: 12px 16px; border-radius: 12px; white-space: nowrap; }
+    .nfc-dock .button { min-height: 48px; padding: 12px 16px; border-radius: 0; white-space: nowrap; }
     .nfc-footer { padding-bottom: 6px; }
   }
   @media (max-width: 360px) {
@@ -121,4 +123,7 @@ const canonical = new URL('/hola/', Astro.site).href;
     .nfc-page a { transition: none; }
   }
 </style>
+
+
+
 
